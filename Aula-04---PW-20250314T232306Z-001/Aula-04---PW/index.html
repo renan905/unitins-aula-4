@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/index.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Formulário de Contato</h1>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name"> Nome Completo:</label>
+                <input type="text" id="name"name="name" required>
+            </div>    
+
+            <div class="form-group">
+                <label for="email"> E-mail: </label>
+                <input type="email" id="email"name="email" required>
+            </div> 
+
+            <div class="form-group">
+                <label for="password"> Senha: </label>
+                <input type="password" id="password"name="password" required>
+            </div>  
+
+            <div class="form-group">
+                <label for="message"> Mensagem: </label>
+                <textarea id="message"name="message" required></textarea>
+            </div> 
+            <a href="tabela.html">Ver dados cadastrados</a>
+
+            <script>
+                function saveData() {
+                    const user = {
+                        name: document.getElementById('name').value,
+                        email: document.getElementById('email').value,
+                        password: document.getElementById('password').value,
+                        message: document.getElementById('message').value
+                    };
+                    let users = JSON.parse(localStorage.getItem('users')) || [];
+                    users.push(user);
+                    localStorage.setItem('users', JSON.stringify(users));
+                    alert('Dados salvos com sucesso!');
+                    clearForm();
+                }
+        
+                function clearForm() {
+                    document.getElementById('userForm').reset();
+                }
+            </script>
+    
+
+            <div class="buttons">
+                <button type="button" class="save" onclick="saveForm()">Salvar</button>
+                <button type="button" class="clear" onclick="clearForm()">Apagar Dados</button>
+            </div>
+        </form>    
+    </div>
+</body>
+</html>

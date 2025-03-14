@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados Cadastrados</title>
+</head>
+<body>
+    <h2>Lista de Usuários</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Telefone</th>
+                <th>Idade</th>
+            </tr>
+        </thead>
+        <tbody id="userTableBody"></tbody>
+    </table>
+    <br>
+    <a href="index.html">Voltar</a>
+
+    <script>
+        function loadData() {
+            let users = JSON.parse(localStorage.getItem('users')) || [];
+            let tableBody = document.getElementById('userTableBody');
+            tableBody.innerHTML = "";
+
+            users.forEach(user => {
+                let row = `<tr>
+                    <td>${user.name}</td>
+                    <td>${user.email}</td>
+                    <td>${user.phone}</td>
+                    <td>${user.age}</td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            });
+        }
+        
+        window.onload = loadData;
+    </script>
+</body>
+</html>

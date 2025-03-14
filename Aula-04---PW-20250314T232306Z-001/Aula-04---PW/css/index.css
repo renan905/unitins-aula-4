@@ -1,0 +1,91 @@
+/* Resetando alguns estilos padrão */
+body, h1, form {
+    margin: 0;
+    padding: 0;
+ }
+ 
+ body {
+     font-family: Arial, sans-serif;
+     background-color: #f4f4f4; /* Cor de fundo clara para a página */
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 100vh; /* Ocupa toda a altura da tela */
+     color: #4c4b4d;
+ }
+ 
+ .container {
+     background-color: #ffffff; /* Cor de fundo para a div */
+     padding: 30px;
+     border-radius: 8px;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidade */
+     width: 100%;
+     max-width: 400px; /* Largura máxima para o formulário */
+ }
+ 
+ h1 {
+     text-align: center;
+     color: #231bc7; /* Cor do título */
+     margin-bottom: 20px;
+ }
+ 
+ .form-group {
+     margin-bottom: 15px;
+ }
+ 
+ label {
+     display: block;
+     margin-bottom: 5px;
+     font-weight: bold;
+ }
+ 
+ input[type="text"], input[type="email"], input[type="password"], textarea {
+     width: 100%; 
+     padding: 10px; 
+     border: 1px solid #ccc; /* Define a borda do campo com uma cor cinza clara */
+     border-radius: 5px; /* Arredonda os cantos da borda para um visual mais suave */
+     font-size: 14px; 
+     box-sizing: border-box; /* Garante que o padding e a borda sejam incluídos no cálculo da largura e altura do elemento */
+ }
+ 
+ 
+ textarea {
+     resize: vertical; /* Permite que o usuário redimensione a área de texto apenas na direção vertical */
+     height: 100px; 
+ }
+ 
+ .buttons {
+     display: flex; /* Usa o Flexbox para organizar os botões dentro do contêiner */
+     justify-content: space-between; /* Distribui os botões de forma que fiquem igualmente espaçados ao longo do eixo horizontal */
+ }
+ 
+ button {
+     padding: 10px 20px;
+     border: none;
+     border-radius: 5px;
+     font-size: 16px;
+     cursor: pointer;
+    /* Adiciona uma transição suave na mudança de cor de fundo */
+     transition: background-color 0.3s; 
+ 
+ }
+ 
+ button.save {
+     background-color: #0dba16;
+     color: white;
+ }
+ 
+ /* Efeito ao passar o mouse sobre o botão "Salvar" */
+ button.save:hover {
+     background-color: #45a049; 
+ }
+ 
+ /* Estilo para o botão "Apagar Dados" */
+ button.clear {
+     background-color: #f44336; 
+     color: white; 
+ }
+ 
+ button.clear:hover {
+     background-color: #e53935;
+ }
